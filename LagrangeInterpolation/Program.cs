@@ -3,7 +3,6 @@ using LagrangeInterpolation;
 
 PritnStudentInfo();
 
-
 InterpolationNode[] points = [
             new(1.0, 2.0),
             new(2.0, 3.0),
@@ -18,17 +17,20 @@ InterpolationNode[] points = [
         ];
 
 InterpolationNode[] points3 = [
-            new(1.0, 2.0),
-            new(2.0, 3.0),
-            new(3.0, 5.0)
+            new(0, 4),
+            new(1, 2),
+            new(2.5, 2.75)
         ];
 
-
+var randomPoints = Lagrange.GenerateRandomNodes(25, 1, 255.5);
 
 var xp = 2.5; 
 
 _ = Lagrange.LagrangeInterpolation(points, xp);
-_ = Lagrange.LagrangeInterpolation(points3, xp);
+
+_ = Lagrange.LagrangeInterpolation(points3, xp); 
+
+_ = Lagrange.LagrangeInterpolation(randomPoints, xp);
 
 FinishProgram();
 

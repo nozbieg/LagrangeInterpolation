@@ -14,6 +14,8 @@ namespace LagrangeInterpolation
     }
     public static class Lagrange
     {
+
+
         public static double LagrangeInterpolation(InterpolationNode[] nodes, double xp)
         {
             int n = nodes.Length;
@@ -33,6 +35,22 @@ namespace LagrangeInterpolation
             }
             Console.WriteLine($"W({xp}) = {result}");
             return result;
+        }
+
+
+        public static InterpolationNode[] GenerateRandomNodes(int numberOfNodes, double minNumber, double maxNumber)
+        {
+            var r = new Random();
+            InterpolationNode[] interpolationNodes = new InterpolationNode[numberOfNodes];
+            for (int i = 0; i < numberOfNodes; i++)
+            {
+                var x = Math.Round(minNumber + (r.NextDouble() *(maxNumber - minNumber)), 2);
+                var y = Math.Round(minNumber + (r.NextDouble() *(maxNumber - minNumber)), 2);
+                var node = new InterpolationNode(x, y);
+                interpolationNodes[i] = node;
+                Console.WriteLine($"Point: X:{node.X} | Y:{node.Y}");
+            }
+            return interpolationNodes;
         }
     }
 }
