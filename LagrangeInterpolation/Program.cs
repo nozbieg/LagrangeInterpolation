@@ -23,7 +23,6 @@ InterpolationNode[] points3 = [
         ];
 
 var randomPoints = Lagrange.GenerateRandomNodes(25, 1, 255.5);
-
 var xp = 2.5; 
 
 _ = Lagrange.LagrangeInterpolation(points, xp);
